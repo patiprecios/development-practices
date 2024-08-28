@@ -1,20 +1,20 @@
-# General Development Guidelines
+# General Development and Contribution Guidelines
 
-This document contains the general development guidelines.
+This document contains the development and contribution guidelines. This guide intends to achieve consistency across the organization's projects.
 
-This guide intends to achieve consistency across the organization's projects.
+It's recommended to read the User's guide and the Developer's guide for each repository before start contributing to the project.
 
 The guidelines for specific languages and technologies are in [Specific guidelines](#specific-guidelines).
 
-# Guidelines
+## Guidelines
 
-## Languages
+### Languages
 
 All the repository information (eg. tags, labels, description), code, commit messages and technical docs inside the repository _must_ be written in English.
 
 All external documents, pull requests and issue discussions, final user documentation, and any resource that is not part of the repository _may_ be written in the local language.
 
-## Code quality
+### Code quality
 
 All of the repositories _must_ implement automated code quality checks.
 
@@ -30,7 +30,9 @@ Some examples of quality checks are:
 - Security / Vulnerabilities / Known bugs
 - Hardcoded Secrets / Keys / Tokens
 
-## Testing & coverage
+Most of these tool can be ran using pre-commit. Install `pre-commit` in your local installation before commit any code. Follow instructions about installation in [pre-commit documentation](https://pre-commit.com/#installation).
+
+### Testing & coverage
 
 If you found a problem, you _must_ fix or delegate and create an issue with the details.
 
@@ -49,7 +51,7 @@ Recommended tests:
 - Acceptance tests
 - Regression and requirements tests
 
-## Text editors / IDEs
+### Text editors / IDEs
 
 Repositories _may_ specify a default editor.
 
@@ -59,7 +61,23 @@ All configuration for the default editor _may_ be under git dvcs in their respec
 
 If you use another editor, please don't commit configuration files, instead, update or create instructions for them under the `docs` folder in the respective repository. This is to avoid having a lot of different configurations for different IDEs.
 
-## Branching model
+### Commit messages
+
+Write descriptive commit messages, which is the legacy you leave to other developers. An example commit message is:
+
+```text
+Title (imperative voice)
+
+Long description, multiline.
+ - New feature 1
+ - Bug fix 1
+
+Tasks/Issues resolved
+```
+
+Most of the content of the commit message is already in the Pull Request description, you can copy the content when merging.
+
+### Branching model
 
 Preferably use the [Github flow](https://guides.github.com/introduction/flow/) branching model. The names of the branches are at the discretion of the team. Use issues and pull requests to discuss and code reviews.
 
@@ -67,17 +85,24 @@ Don't let the branches get old. Keep branches simple, Is better to merge small f
 
 Write descriptive commit messages, which is the legacy you leave to other developers.
 
-## Dependencies
+### Dependencies
 
 You _should_ keep dependencies outdated with at most _1 major version_, _5 minor versions_, and _no outdated patch versions_ since the latest stable release.
+
+### Security
+
+Follow guidelines from [OWASP](https://cheatsheetseries.owasp.org/index.html) when possible.
+
+Never commit secrets. Use `.env` files both for configuring docker compose or the app settings. Be sure the .env file is ignored in `.gitignore`.
 
 ## Specific guidelines
 
 Here is a list of specific guidelines:
 
 - [Python](languages/python.md)
+- [Rust](languages/rust.md)
 
-# Contributing
+## Contributing
 
 Nothing here is written in stone, but the important thing is that something must be written. If there are better solutions & practices, consider implementing them.
 
