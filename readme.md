@@ -95,6 +95,14 @@ Follow guidelines from [OWASP](https://cheatsheetseries.owasp.org/index.html) wh
 
 Never commit secrets. Use `.env` files both for configuring docker compose or the app settings. Be sure the .env file is ignored in `.gitignore`.
 
+### Observability
+
+TODO:
+
+### Documentation
+
+TODO:
+
 ## Specific guidelines
 
 Here is a list of specific guidelines:
