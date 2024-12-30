@@ -24,9 +24,10 @@ Some examples of quality checks are:
 
 - Testing / Coverage
 - Formatting / Linting
+- Documentation
 - Complexity / Metrics
 - Typing (if apply)
-- Outdated versions
+- Dependency management / Outdated versions
 - Security / Vulnerabilities / Known bugs
 - Hardcoded Secrets / Keys / Tokens
 
